@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #define msg_queue_initializing_error printf("Error to acess the queue, maybe not initialized")
 #define msg_node_initializing_error printf("Error to create a new node")
@@ -24,5 +25,7 @@ queue* init_queue();
 int queue_size();
 void queue_push();
 void queue_pop();
+int queue_front();
+int queue_back();
 
 #endif
