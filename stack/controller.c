@@ -18,7 +18,7 @@ int stack_size(stack* s){
         return 0;
     }
 
-    node* top = s->top;
+    node_single* top = s->top;
     int cont = 1;
 
     while(top->next != NULL){
@@ -35,7 +35,7 @@ void stack_push(stack* s, int v){
         return;
     }
 
-    node* new_node = (node*) malloc(sizeof(node));
+    node_single* new_node = (node_single*) malloc(sizeof(node_single));
     if(new_node == NULL){
         msg_node_initializing_error;
         return;
@@ -58,7 +58,7 @@ void stack_pop(stack* s){
         return;
     }
     
-    node* toPop = s->top;
+    node_single* toPop = s->top;
     s->top = toPop->next;
 
     free(toPop);

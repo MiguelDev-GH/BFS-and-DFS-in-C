@@ -17,7 +17,7 @@ int queue_size(queue* q){
     if(q->front == NULL) return 0;
     else if(q->front == q->back) return 1;
     
-    node* back = q->back;
+    node_double* back = q->back;
     int cont = 1;
 
     while(back->next != NULL){
@@ -34,7 +34,7 @@ void queue_push(queue* q, int v){
         return;
     }
 
-    node* new_node = (node*) malloc(sizeof(node));
+    node_double* new_node = (node_double*) malloc(sizeof(node_double));
     if(new_node == NULL){
         msg_node_initializing_error;
         return;
@@ -48,7 +48,7 @@ void queue_push(queue* q, int v){
         q->front = new_node;
         q->back = new_node;
     } else {
-        node* last = q->back;
+        node_double* last = q->back;
         last->prev = new_node;
         q->back = new_node;
     }
@@ -64,7 +64,7 @@ void queue_pop(queue* q){
         return;
     }
 
-    node* toPop = q->front;
+    node_double* toPop = q->front;
 
     if(queue_size(q) == 1){
         q->front = NULL;
